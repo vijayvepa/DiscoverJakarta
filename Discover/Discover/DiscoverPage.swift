@@ -22,7 +22,8 @@ class DiscoverPage: UICollectionViewCell {
         textView.backgroundColor = UIColor(white: 0.2, alpha: 0)
 
         textView.contentInset = UIEdgeInsets(top: 24, left: 16, bottom: 0, right: 16)
-        textView.attributedText = getText(title: "DISCOVER", message: "JAKARTA, INDONESIA")
+        textView.attributedText = getText(title: NSLocalizedString("Discover", comment:"Discover"), 
+                message: NSLocalizedString("Jakarta", comment: "Jakarta"))
         return textView
     }()
 

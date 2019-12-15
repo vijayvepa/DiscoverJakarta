@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,7 @@
 		6B02A98ED5CDE9A36DBB3DF6 /* DiscoverPageYellow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B02AAF572ADB42FDAA8B3DE /* DiscoverPageYellow.swift */; };
 		6B02A9BD21DE364F55768E00 /* ViewSwiftController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B02A33454ED65072171E3D6 /* ViewSwiftController.swift */; };
 		AA8D39A085D6459BD30E5E18 /* Pods_Discover.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02B4E3FD29B7EEF9AA02D57D /* Pods_Discover.framework */; };
+		B10EEE2D23A69DA90039A173 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B10EEE2F23A69DA90039A173 /* Localizable.strings */; };
 		B155081F238C7B2D005AFA9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B155081E238C7B2D005AFA9D /* AppDelegate.swift */; };
 		B1550821238C7B2D005AFA9D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1550820238C7B2D005AFA9D /* SceneDelegate.swift */; };
 		B1550823238C7B2D005AFA9D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1550822238C7B2D005AFA9D /* ViewController.swift */; };
@@ -28,6 +29,8 @@
 		6B02AAF572ADB42FDAA8B3DE /* DiscoverPageYellow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverPageYellow.swift; sourceTree = "<group>"; };
 		6B02ADF8F14D416EA39AF8B5 /* DiscoverPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverPage.swift; sourceTree = "<group>"; };
 		9BFD0D564942630F099EDE46 /* Pods-Discover.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Discover.debug.xcconfig"; path = "Target Support Files/Pods-Discover/Pods-Discover.debug.xcconfig"; sourceTree = "<group>"; };
+		B10EEE2E23A69DA90039A173 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B10EEE3023A69DC30039A173 /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B155081B238C7B2D005AFA9D /* Discover.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Discover.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B155081E238C7B2D005AFA9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1550820238C7B2D005AFA9D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +93,7 @@
 				6B02ADF8F14D416EA39AF8B5 /* DiscoverPage.swift */,
 				6B02A33454ED65072171E3D6 /* ViewSwiftController.swift */,
 				6B02AAF572ADB42FDAA8B3DE /* DiscoverPageYellow.swift */,
+				B10EEE2F23A69DA90039A173 /* Localizable.strings */,
 			);
 			path = Discover;
 			sourceTree = "<group>";
@@ -100,7 +104,6 @@
 				9BFD0D564942630F099EDE46 /* Pods-Discover.debug.xcconfig */,
 				50A574932CEB313F0E246540 /* Pods-Discover.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -148,6 +151,7 @@
 			knownRegions = (
 				en,
 				Base,
+				hi,
 			);
 			mainGroup = B1550812238C7B2D005AFA9D;
 			productRefGroup = B155081C238C7B2D005AFA9D /* Products */;
@@ -164,6 +168,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B10EEE2D23A69DA90039A173 /* Localizable.strings in Resources */,
 				B155082B238C7B2F005AFA9D /* LaunchScreen.storyboard in Resources */,
 				B1550828238C7B2F005AFA9D /* Assets.xcassets in Resources */,
 				B1550826238C7B2D005AFA9D /* Main.storyboard in Resources */,
@@ -232,6 +237,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		B10EEE2F23A69DA90039A173 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B10EEE2E23A69DA90039A173 /* en */,
+				B10EEE3023A69DC30039A173 /* hi */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		B1550824238C7B2D005AFA9D /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -255,6 +269,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -315,6 +330,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
