@@ -13,7 +13,7 @@ class DiscoverPage: UICollectionViewCell {
     let headerContainer: UIImageView = UIImageView.named("HeaderContainer")
     let contentContainer: UIImageView = UIImageView.namedNoClip("ContentContainer")
 
-    let textView: UITextView = {
+    let headerText: UITextView = {
 
         let textView = UITextView()
 
@@ -22,8 +22,31 @@ class DiscoverPage: UICollectionViewCell {
         textView.backgroundColor = UIColor(white: 0.2, alpha: 0)
 
         textView.contentInset = UIEdgeInsets(top: 24, left: 16, bottom: 0, right: 16)
-        textView.attributedText = getText(title: NSLocalizedString("Discover", comment:"Discover"), 
-                message: NSLocalizedString("Jakarta", comment: "Jakarta"))
+        textView.attributedText = NSAttributedString.fromRichText(richText: [
+
+            RichText(content: localized("Discover"), font: .systemFont(ofSize: 24), color: .white),
+            RichText(content: localized("Jakarta"), font: .systemFont(ofSize: 16), color: .white)
+
+        ])
+
+        return textView
+    }()
+
+    let contentText: UITextView = {
+
+        let textView = UITextView()
+
+        textView.isEditable = false
+        textView.isSelectable = false
+        textView.backgroundColor = UIColor(white: 0.2, alpha: 0)
+
+        textView.contentInset = UIEdgeInsets(top: 24, left: 16, bottom: 0, right: 16)
+        textView.attributedText = NSAttributedString.fromRichText(richText: [
+
+            RichText(content: localized("Discover"), font: .systemFont(ofSize: 24), color: UIColor(hex:"#4A4A4A")),
+            RichText(content: localized("Jakarta"), font: .systemFont(ofSize: 16), color: UIColor(hex:"#B2AAAA"))
+
+        ])
         return textView
     }()
 
@@ -42,54 +65,24 @@ class DiscoverPage: UICollectionViewCell {
         addSubview(headerBackground)
         addSubview(headerContainer)
 
-        addSubview(textView)
+        addSubview(headerText)
 
         addSubview(contentContainer)
 
         headerBackground.anchor(top: self.topAnchor, heightConstant: self.frame.height * 0.4)
         headerContainer.anchor(top: self.topAnchor, heightConstant: self.frame.height * 0.4)
-        textView.anchor(top: self.topAnchor, left: self.leftAnchor, right: self
+        headerText.anchor(top: self.topAnchor, left: self.leftAnchor, right: self
                 .rightAnchor, topConstant: self.frame.height * 0.05, heightConstant: self.frame.height * 0.15)
-        contentContainer.anchor(top: textView.bottomAnchor, left:self.leftAnchor, bottom: self.bottomAnchor, right:
+        contentContainer.anchor(top: headerText.bottomAnchor, left:self.leftAnchor, bottom: self.bottomAnchor, right:
         self.rightAnchor, topConstant: 10, leftConstant: 10, bottomConstant: -10, rightConstant: -10)
 
 
         self.backgroundColor = .white
     }
 
-
-    private static func getText(title: String, message: String) -> NSMutableAttributedString {
-
-        let color: UIColor = .white
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.alignment = .center
-
-
-        let pageTitle: NSMutableAttributedString = NSMutableAttributedString(string: title,
-                attributes: [
-                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: 24, weight: UIFont.Weight.medium),
-                    NSAttributedString.Key.foregroundColor: color
-
-                ])
-
-        let pageMessage: NSMutableAttributedString = NSMutableAttributedString(string: "\n\n\(message)",
-                attributes: [
-                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.medium),
-                    NSAttributedString.Key.foregroundColor: color
-                ])
-
-        pageTitle.append(pageMessage)
-
-        pageTitle.addAttribute(
-                NSAttributedString.Key.paragraphStyle,
-                value: paragraphStyle,
-                range: NSRange(location: 0, length: pageTitle.string.count)
-        )
-
-        return pageTitle
-
+    private static func localized(_ text: String) -> String {
+        return NSLocalizedString(text, comment: text)
     }
-
 
 }
 
@@ -111,6 +104,64 @@ extension UIImageView {
     }
 }
 
+extension UIColor {
+    convenience init(hex: String, alpha: CGFloat = 1.0) {
+        var hexFormatted = hex.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).uppercased()
+
+        if hexFormatted.hasPrefix("#") {
+            hexFormatted = String(hexFormatted.dropFirst())
+        }
+
+        assert(hexFormatted.count == 6, "Invalid hex code used.")
+
+        var rgbValue: UInt64 = 0
+        Scanner(string: hexFormatted).scanHexInt64(&rgbValue)
+
+        self.init(red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+                green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+                blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+                alpha: alpha)
+    }
+}
+
+extension NSAttributedString {
+
+    static func fromRichText(richText: [RichText], paragraphStyle: Any? = nil) -> NSAttributedString {
+
+        let attributedString: NSMutableAttributedString = NSMutableAttributedString()
+
+
+        richText.forEach{text in
+            let pageTitle: NSMutableAttributedString = NSMutableAttributedString(string: text.content,
+                    attributes: [
+                        NSAttributedString.Key.font: text.font,
+                        NSAttributedString.Key.foregroundColor: text.color
+                    ])
+            attributedString.append(pageTitle)
+        }
+
+        if let paragraphStyle = paragraphStyle {
+
+            attributedString.addAttribute(
+                    NSAttributedString.Key.paragraphStyle,
+                    value: paragraphStyle,
+                    range: NSRange(location: 0, length: attributedString.string.count)
+            )
+        }else{
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.alignment = .center
+
+            attributedString.addAttribute(
+                    NSAttributedString.Key.paragraphStyle,
+                    value: paragraphStyle,
+                    range: NSRange(location: 0, length: attributedString.string.count)
+            )
+        }
+
+        return attributedString
+
+    }
+}
 
 
 

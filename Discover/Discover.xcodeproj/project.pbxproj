@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6B02A6DF2DE0B424A792A7E1 /* DiscoverPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B02ADF8F14D416EA39AF8B5 /* DiscoverPage.swift */; };
 		6B02A7D9AC1E2C03283041C7 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 6B02A78DFCB3DF4B811403A8 /* Podfile */; };
+		6B02A9500BA2886898B8B7DC /* RichText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B02A68CCD5D4F3BBB3524E6 /* RichText.swift */; };
 		6B02A98ED5CDE9A36DBB3DF6 /* DiscoverPageYellow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B02AAF572ADB42FDAA8B3DE /* DiscoverPageYellow.swift */; };
 		6B02A9BD21DE364F55768E00 /* ViewSwiftController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B02A33454ED65072171E3D6 /* ViewSwiftController.swift */; };
 		AA8D39A085D6459BD30E5E18 /* Pods_Discover.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02B4E3FD29B7EEF9AA02D57D /* Pods_Discover.framework */; };
@@ -25,6 +26,7 @@
 		02B4E3FD29B7EEF9AA02D57D /* Pods_Discover.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Discover.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50A574932CEB313F0E246540 /* Pods-Discover.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Discover.release.xcconfig"; path = "Target Support Files/Pods-Discover/Pods-Discover.release.xcconfig"; sourceTree = "<group>"; };
 		6B02A33454ED65072171E3D6 /* ViewSwiftController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewSwiftController.swift; sourceTree = "<group>"; };
+		6B02A68CCD5D4F3BBB3524E6 /* RichText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RichText.swift; sourceTree = "<group>"; };
 		6B02A78DFCB3DF4B811403A8 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		6B02AAF572ADB42FDAA8B3DE /* DiscoverPageYellow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverPageYellow.swift; sourceTree = "<group>"; };
 		6B02ADF8F14D416EA39AF8B5 /* DiscoverPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverPage.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				6B02A33454ED65072171E3D6 /* ViewSwiftController.swift */,
 				6B02AAF572ADB42FDAA8B3DE /* DiscoverPageYellow.swift */,
 				B10EEE2F23A69DA90039A173 /* Localizable.strings */,
+				6B02A68CCD5D4F3BBB3524E6 /* RichText.swift */,
 			);
 			path = Discover;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 				6B02A6DF2DE0B424A792A7E1 /* DiscoverPage.swift in Sources */,
 				6B02A9BD21DE364F55768E00 /* ViewSwiftController.swift in Sources */,
 				6B02A98ED5CDE9A36DBB3DF6 /* DiscoverPageYellow.swift in Sources */,
+				6B02A9500BA2886898B8B7DC /* RichText.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

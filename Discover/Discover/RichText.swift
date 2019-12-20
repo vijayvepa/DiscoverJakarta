@@ -3,7 +3,10 @@
 // Copyright (c) 2019 Vijay Vepakomma. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-class RichText {
+struct RichText {
+    let content : String
+    let font: UIFont
+    let color: UIColor
 }
